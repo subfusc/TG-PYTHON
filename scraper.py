@@ -1,10 +1,9 @@
 import urllib
 import re 
-import sys
 
-url = sys.argv[1]
+url = "http://itavisen.no"
 f = urllib.urlopen(url)
 html = f.read()
 
-reg = r'<img src="(.*?)".*/?>'
+reg = r'<img.*src="(.*?)".*/?>'
 print re.findall(reg, html)
