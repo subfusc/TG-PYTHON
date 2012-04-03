@@ -2,6 +2,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{listings}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{UiO_Campus_TG1024.png}}
+
+\lstset{
+  basicstyle=\small
+}
 
 \begin{document}
 
@@ -10,34 +15,79 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Hvordan få regulære uttrykk inn i python}
   For å gjøre et søk etter noe i en tekst, så må vi bruke
   de følgende to linjene.
   \lstinputlisting[language=Python]{re1.py}
 \end{frame}
 
 \begin{frame}
-  Hvordan vil du prøve å finne tittelen på
+  Du kan søke etter hvilken som helst tekststreng.
+  \lstinputlisting[language=Python]{re2_1.py}
+\end{frame}
+
+\begin{frame}
+  Og vi kan finne ut om vi har funnet noe ved å si:
+  \lstinputlisting[language=Python]{re2_2.py}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item Bortsett fra å kunne søke etter noe i en tekst, 
+      hva er spessiellt med regulære uttrykk?
+    \item Spessielle symboler i teksten vil gjøre søket
+      mer avansert.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Symbolet . ( \textbackslash~\textbackslash~. )}
+  . kan være hva som helst. Hvis du ville ha en dot (for eksempel
+  søke etter filer som ``hei.txt''), må du bruke \textbackslash~\textbackslash~.
+  \lstinputlisting[language=Python]{redot.py}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Symbolet *}
+  * vil finne alle symbol som er rett foran den 0 eller flere ganger.
+  Eksempel: ``hu*nd'' vil matche
+  \begin{itemize}
+    \item hnd
+    \item hund
+    \item huund
+    \item huuund
+    \item etc.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Paranteser ()}
+  Med () kan du lage større grupper av symboler og få ut hva
+  du har funnet. 
+  Eksempel: ``h(..)d''
+  vil matche hund og i resultatet fra søket kan du finne ut at
+  .. var ``un''
+\end{frame}
+
+\begin{frame}
+  Med dette kan vi begynne å crawle Webben for info.
+  For eksempel, hvordan vil du prøve å finne tittelen på
   dette dokument?
   \lstinputlisting[language=html]{eksempel.html}
 \end{frame}
 
 \begin{frame}
-\end{frame}
-
-\begin{frame}
-  \lstinputlisting[language=Python]{re2.py}
-\end{frame}
-
-\begin{frame}
-  . ( \textbackslash~.)
-\end{frame}
-
-\begin{frame}
-  *
-\end{frame}
-
-\begin{frame}
-  ()
+  Vi vet at tittelen må starte med ``\textless~title~\textgreater'' og slutte med
+  ``\textless~/title~\textgreater''. Hva som er inni der er uvisst/
+  Så om vi ikke vet hva som er der, så kan vi bruke ``.'', som
+  representerer hvilken som helst bokstav. Men vi trenger den
+  mer enn 1 gang. Hvordan løser vi det problemet?
+  ``*'' vil ta et symbol mer enn 1 gang. ``.*'' vil da ta hva 
+  som helst.
+  Så da prøver vi ``\textless~title~\textgreater.*\textless~/title~\textgreater''
+  Da vil du kunne finne ut om et dokument har en tittel, men for å
+  hente det ut, må vi bruke ().
+  ``\textless~title~\textgreater(.*)~\textless~/title~\textgreater''
 \end{frame}
 
 \end{document}
