@@ -23,5 +23,7 @@ print a
 
 b = 30
 
-print a+b
+c = a+b
+
+print c
 
