@@ -1,3 +1,4 @@
+# coding=utf8
 # Det finnes mange versjoner av Python.
 # I dette kurset bruker jeg Python 2.7
 # regne ut et liten oppgave, f.eks 21*2
