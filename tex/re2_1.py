@@ -7,5 +7,5 @@ det_vi_leter_etter = "hund"
 # En tekst vi vil lete i.
 tekst = "det var en gang en hund som het Arne."
 
-# Let etter svar
-resultat = re.search(det_vi_leter_etter, tekst)
+# Fin alle muligheter.
+resultat = re.findall(det_vi_leter_etter, tekst)

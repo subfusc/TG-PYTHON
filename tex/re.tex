@@ -71,23 +71,55 @@
 
 \begin{frame}
   Med dette kan vi begynne å crawle Webben for info.
-  For eksempel, hvordan vil du prøve å finne tittelen på
+  For eksempel, hvordan vil du prøve å finne bildet i
   dette dokument?
-  \lstinputlisting[language=html]{eksempel.html}
+  \lstinputlisting[language=html]{eksempel2.html}
 \end{frame}
 
 \begin{frame}
-  Vi vet at tittelen må starte med ``\textless~title~\textgreater'' og slutte med
-  ``\textless~/title~\textgreater''. Hva som er inni der er uvisst/
+  Vi vet at bilder må starte med ``\textless~img'' og slutte med
+  ``\textgreater~''. Hva som er inni der er uvisst/
   Så om vi ikke vet hva som er der, så kan vi bruke ``.'', som
   representerer hvilken som helst bokstav. Men vi trenger den
   mer enn 1 gang. Hvordan løser vi det problemet?
   ``*'' vil ta et symbol mer enn 1 gang. ``.*'' vil da ta hva 
   som helst.
-  Så da prøver vi ``\textless~title~\textgreater.*\textless~/title~\textgreater''
-  Da vil du kunne finne ut om et dokument har en tittel, men for å
+  Så da prøver vi '\textless~img.*src=''.*''.*~\textgreater'
+  Da vil du kunne finne ut om et dokument har et bilde, men for å
   hente det ut, må vi bruke ().
-  ``\textless~title~\textgreater(.*)~\textless~/title~\textgreater''
+  '\textless~img src=''(.*)'' \textgreater'
+\end{frame}
+
+\begin{frame}
+  \frametitle{Problem}
+  Et problem med denne koden
+  \lstinputlisting[language=python]{rebilde.py}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Symbolet ?}
+  
+  ? kan bety to ting
+  \begin{itemize}
+    \item sammen med * betyr det at du vil prøve å finne 
+      så lite som mulig med denne stjernen.
+    \item sammen med alt annet, betyr at det rett forran
+      kan forekomme 0 eller 1 gang
+    \end{itemize}
+
+    Det er veldig greit om du skal unngå å få feil ting tilbake.
+\end{frame}
+
+\begin{frame}
+Så hvis vi prøver igjen, der vi pakker ? på alle stjernene våre, 
+slik at vi leter etter så lite som mulig hver omgang.
+Da får vi '\textless~img.*?src=''(.*?)''.*?\textgreater~'
+la oss prøve
+\end{frame}
+
+\begin{frame}
+Prøv på en live webside ved bruk av urllib 
+og urlopen.
 \end{frame}
 
 \end{document}
