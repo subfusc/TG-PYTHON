@@ -1,0 +1,16 @@
+- Introduction
+- Short repetition of PY101?
+- Functions [functions.py]
+  >>> def square(x):
+          return(x * x)
+  >>> y = square(5)
+  >>> print(y)
+  >>> z = square(y)
+  >>> print(z)
+  >>> def multiply(x, y):
+          return(x * y)
+  >>> print(y)
+  >>> print(z)
+  >>> a = multiply(y, z)
+  >>> print(a)
+  >>> 

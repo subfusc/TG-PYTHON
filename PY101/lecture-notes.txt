@@ -1,0 +1,46 @@
+- Introduksjon
+- Hello World [hello_world.py]
+  >>> print("Hello World!")
+
+- Variables [TODO: make example file]
+  >>> x = 5
+  >>> print(x)
+  >>> x = "Hello, World!"
+  >>> print(x)
+  >>> x = 4.5
+  >>> print(x)
+
+- Numerical Values [numvar.py]
+  >>> print(21 * 2)
+  >>> a = 21 * 2
+  >>> print(a)
+  >>> b = 30
+  >>> c = a + b
+  >>> print(c)
+
+- String Values [strvar.py]
+  >>> a = "Hello, "
+  >>> b = "World!"
+  >>> c = a + b
+  >>> print(c)
+
+- If else [if_else.py]
+  >>> alder = 12
+  >>> if alder >= 16:
+  >>>     print("Du kan komme inn på The Gathering selv om mamma sier nei!")
+  >>> else:
+  >>>     print("Du må nok spørre mammaen din de neste ", 16 - alder, " årene.")
+  -- Vis fil og kjør if_else.py fra terminal linja
+
+- Lister [lists.py]
+  >>> kursliste = ['unknown', 'PY102']
+  >>> print(kursliste[0])
+  >>> kursliste[0] = 'PY101'
+  >>> print(kursliste)
+  >>> kursliste.append('ADMIN101')
+  >>> print(kursliste)
+
+- For Løkke [loops.py]
+  >>> for kurs in kursliste:
+  >>>    print kurs
+    

@@ -1,0 +1,19 @@
+- Introduksjon
+- Hello World [hello_world.py]
+  >>> print('Hello World!')
+
+- Variables [TODO: make example file]
+  >>> x = 5
+  >>> print(x)
+  >>> x = "Hello, World!"
+  >>> print(x)
+  >>> x = 4.5
+  >>> print(x)
+
+- Numerical Values [numvar.py]
+  >>> print(21 * 2)
+  >>> a = 21 * 2
+  >>> print(a)
+  >>> b = 30
+  >>> c = a + b
+  >>> print(c)
